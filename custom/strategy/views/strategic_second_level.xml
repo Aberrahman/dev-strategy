@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    //Menu item and action window for strategy.secondlevel Model
+    <record id="action_strategic_second_level" model="ir.actions.act_window">
+        <field name="name">2ème Niveau stratégique</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.secondlevel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_second_level"
+              name="2ème Niveau stratégique"
+              parent="menu_strategic_levels"
+              action="action_strategic_second_level"
+              sequence="1"/>
+
+    //strategy.secondlevel Form view
+    <record id="view_strategy_second_level_form" model="ir.ui.view">
+        <field name="name">strategy.secondlevel.form</field>
+        <field name="model">strategy.secondlevel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name='name' placeholder="2ème Niveau stratégique"/>
+                    <group>
+                        <group>
+                            <field name='level_id'/>
+                            <field name='strategy_id'/>
+                            <field name='first_level_id'/>
+                            <field name='managers' widget="many2many_tags"/>
+                            <field name='tag_ids' widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name='currency_id'/>
+                            <field name='cost'/>
+                            <field name='departments' widget="many2many_tags"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    //strategy.secondlevel List view
+    <record id="view_strategy_second_level_tree" model="ir.ui.view">
+        <field name="name">strategy.secondlevel.tree</field>
+        <field name="model">strategy.secondlevel</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='level_id'/>
+                <field name='strategy_id'/>
+                <field name='first_level_id'/>
+                <field name='name'/>
+                <field name='managers' widget="many2many_tags"/>
+                <field name='departments' widget="many2many_tags"/>
+                <field name='cost'/>
+                <field name='currency_id' invisible="1"/>
+
+            </tree>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+strategy.access_strategy_strategy,access_strategy_strategy,strategy.model_strategy_strategy,base.group_user,1,1,1,1
+strategy.access_strategy_firstlevel,access_strategy_firstlevel,strategy.model_strategy_firstlevel,base.group_user,1,1,1,1
+strategy.access_strategy_secondlevel,access_strategy_secondlevel,strategy.model_strategy_secondlevel,base.group_user,1,1,1,1
+strategy.access_strategy_thirdlevel,access_strategy_thirdlevel,strategy.model_strategy_thirdlevel,base.group_user,1,1,1,1
+strategy.access_strategy_fourthlevel,access_strategy_fourthlevel,strategy.model_strategy_fourthlevel,base.group_user,1,1,1,1
+strategy.access_strategy_tag,access_strategy_tag,strategy.model_strategy_tag,base.group_user,1,1,1,1
+strategy.access_indicator_unit,access_indicator_unit,strategy.model_indicator_unit,base.group_user,1,1,1,1
+strategy.access_indicator_category,access_indicator_category,strategy.model_indicator_category,base.group_user,1,1,1,1
+strategy.access_strategy_indicator,access_strategy_indicator,strategy.model_strategy_indicator,base.group_user,1,1,1,1
+strategy.access_strategy_alignment,access_strategy_alignment,strategy.model_strategy_alignment,base.group_user,1,1,1,1

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    //Root menu item for the strategy Module
+    <menuitem id="menu_strategy_root"
+              name="Stratégie"
+              sequence="1"/>
+
+    //Menu item for the strategy configuration
+    <menuitem id="menu_strategy_configuration"
+              name="Configuration"
+              parent="menu_strategy_root"
+              sequence="1"/>
+
+    //Menu item for the strategy levels configurations
+    <menuitem id="menu_strategic_levels"
+              name="Niveaux stratégiques"
+              parent="menu_strategy_configuration"
+              sequence="1"/>
+
+    //Menu item for the performance indicators configurations
+    <menuitem id="menu_performance_indicators"
+              name="Indicateurs"
+              parent="menu_strategy_configuration"
+              sequence="1"/>
+
+    //Menu item and action window for indicator.unit Model
+    <record id="action_indicator_units" model="ir.actions.act_window">
+        <field name="name">Unités de mesure</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">indicator.unit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_indicator_units"
+              name="Unités de mesure"
+              parent="menu_performance_indicators"
+              action="action_indicator_units"
+              sequence="1"/>
+
+    //Menu item and action window for indicator.category Model
+    <record id="action_indicator_categories" model="ir.actions.act_window">
+        <field name="name">Catégories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">indicator.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_indicator_categories"
+              name="Catégories"
+              parent="menu_performance_indicators"
+              action="action_indicator_categories"
+              sequence="1"/>
+
+    //Menu item and action window for strategy.tag Model
+    <record id="action_strategy_tags" model="ir.actions.act_window">
+        <field name="name">Étiquettes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.tag</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_tags"
+              name="Étiquettes"
+              parent="menu_strategy_configuration"
+              action="action_strategy_tags"
+              sequence="1"/>
+
+</odoo>

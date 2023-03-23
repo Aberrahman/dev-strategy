@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    //Menu item and action window for strategy.alignment Model
+    <record id="action_strategic_alignments" model="ir.actions.act_window">
+        <field name="name">Alignements stratégiques</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.alignment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_strategic_alignments"
+              name="Alignements Stratégiques"
+              parent="menu_strategy_root"
+              action="action_strategic_alignments"
+              sequence="1"/>
+
+    //strategy.alignment Form view
+    <record id="view_strategy_alignment_form" model="ir.ui.view">
+        <field name="name">strategy.alignment.form</field>
+        <field name="model">strategy.alignment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name='strategy_id'/>
+                            <field name='first_level_id'/>
+                            <field name='second_level_id'/>
+
+                        </group>
+                        <group>
+                            <field name='third_level_id'/>
+                            <field name='fourth_level_id'/>
+                            <field name='project_ids' widget="many2many_tags"/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    //strategy.alignment List view
+    <record id="view_strategy_alignment_tree" model="ir.ui.view">
+        <field name="name">strategy.alignment.tree</field>
+        <field name="model">strategy.alignment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='strategy_id'/>
+                <field name='first_level_id'/>
+                <field name='second_level_id'/>
+                <field name='third_level_id'/>
+                <field name='fourth_level_id'/>
+                <field name='project_ids' widget="many2many_tags"/>
+
+            </tree>
+        </field>
+    </record>
+</odoo>

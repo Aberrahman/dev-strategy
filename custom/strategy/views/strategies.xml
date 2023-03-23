@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    //Menu item and action window for strategy.strategies Model
+    <record id="action_strategy_strategies" model="ir.actions.act_window">
+        <field name="name">Stratégies</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.strategy</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_strategies"
+              name="Stratégies"
+              parent="menu_strategy_root"
+              action="action_strategy_strategies"
+              sequence="1"/>
+
+    //strategy.strategies Form view
+    <record id="view_strategy_strategies_form" model="ir.ui.view">
+        <field name="name">strategy.strategy.form</field>
+        <field name="model">strategy.strategy</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name='name' placeholder="Stratégie"/>
+                    <group>
+                        <group>
+                            <field name='strategy_id'/>
+                            <field name='currency_id'/>
+                            <field name='cost'/>
+                            <field name='manager_ids' widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name='start_date'/>
+                            <field name='end_date'/>
+                            <field name='tag_ids' widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="description" string="Description">
+                            <field name='description'/>
+                        </page>
+                        <page name="first_level" string="1er Niveau stratégique">
+                            <field name='first_level_ids'/>
+                        </page>
+                        <page name="second_level" string="2ème Niveau stratégique">
+                            <field name='second_level_ids'/>
+                        </page>
+                        <page name="third_level" string="3ème Niveau stratégique">
+                            <field name='third_level_ids'/>
+                        </page>
+                        <page name="fourth_level" string="4ème Niveau stratégique">
+                            <field name='fourth_level_ids'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    //strategy.strategies List view
+    <record id="view_strategy_strategies_tree" model="ir.ui.view">
+        <field name="name">strategy.strategy.tree</field>
+        <field name="model">strategy.strategy</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='name'/>
+                <field name='manager_ids' widget="many2many_tags"/>
+                <field name='start_date'/>
+                <field name='end_date'/>
+                <field name='cost'/>
+                <field name='currency_id' invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

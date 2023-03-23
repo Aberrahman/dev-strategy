@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    //Menu item and action window for strategy.thirdlevel Model
+    <record id="action_strategic_third_level" model="ir.actions.act_window">
+        <field name="name">3ème Niveau stratégique</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.thirdlevel</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_third_level"
+              name="3ème Niveau stratégique"
+              parent="menu_strategic_levels"
+              action="action_strategic_third_level"
+              sequence="1"/>
+
+    //strategy.thirdlevel Form view
+    <record id="view_strategy_third_level_form" model="ir.ui.view">
+        <field name="name">strategy.thirdlevel.form</field>
+        <field name="model">strategy.thirdlevel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name='name' placeholder="3ème Niveau stratégique"/>
+                    <group>
+                        <group>
+                            <field name='level_id'/>
+                            <field name='strategy_id'/>
+                            <field name='first_level_id'/>
+                            <field name='second_level_id'/>
+                            <field name='managers' widget="many2many_tags"/>
+                            <field name='tag_ids' widget="many2many_tags"/>
+                        </group>
+                        <group>
+                            <field name='currency_id'/>
+                            <field name='cost'/>
+                            <field name='departments' widget="many2many_tags"/>
+                            <field name='type'/>
+                            <field name='maturity_level'/>
+                            <field name='start_date'/>
+                            <field name='end_date'/>
+                            <field name='duration'/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    //strategy.thirdlevel List view
+    <record id="view_strategy_third_level_tree" model="ir.ui.view">
+        <field name="name">strategy.thirdlevel.tree</field>
+        <field name="model">strategy.thirdlevel</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='level_id'/>
+                <field name='strategy_id'/>
+                <field name='first_level_id'/>
+                <field name='second_level_id'/>
+                <field name='name'/>
+                <field name='managers' widget="many2many_tags"/>
+                <field name='departments' widget="many2many_tags"/>
+                <field name='cost'/>
+                <field name='currency_id' invisible="1"/>
+
+            </tree>
+        </field>
+    </record>
+</odoo>

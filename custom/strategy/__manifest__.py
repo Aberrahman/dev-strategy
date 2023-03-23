@@ -1,0 +1,23 @@
+{
+    'name': 'Stratégie',
+    'version': '1.0',
+    'author': 'Abderrahman',
+    'website': 'abc.mr',
+    'category': 'Services',
+    'summary': 'Custom module to manage strategies and align strategic projects with the annual projects',
+    'depends': ['base', 'project', 'hr'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/strategies.xml',
+        'views/strategy_menu.xml',
+        'views/strategic_alignments.xml',
+        'views/strategic_first_level.xml',
+        'views/strategic_second_level.xml',
+        'views/strategic_third_level.xml',
+        'views/strategic_fourth_level.xml',
+        'views/performance_indicators.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

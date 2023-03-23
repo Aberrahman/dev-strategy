@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    //Menu item and action window for strategy.indicator Model
+    <record id="action_strategy_indicators" model="ir.actions.act_window">
+        <field name="name">Indicateurs de performance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">strategy.indicator</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_strategy_indicators"
+              name="Indicateurs de performance"
+              parent="menu_performance_indicators"
+              action="action_strategy_indicators"
+              sequence="1"/>
+
+    //strategy.indicator Form view
+    <record id="view_strategy_indicator_form" model="ir.ui.view">
+        <field name="name">strategy.indicator.form</field>
+        <field name="model">strategy.indicator</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name='name' placeholder="Indicateur de performance"/>
+                    <group>
+                        <group>
+                            <field name='strategy_id'/>
+                            <field name='first_level_id'/>
+                            <field name='second_level_id'/>
+                            <field name='third_level_id'/>
+                            <field name='fourth_level_id'/>
+                        </group>
+                        <group>
+
+                            <field name='category_id'/>
+                            <field name='uom_id'/>
+                            <field name='target_value'/>
+                            <field name='real_value'/>
+                            <field name='date'/>
+
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    //strategy.indicator List view
+    <record id="view_strategy_indicator_tree" model="ir.ui.view">
+        <field name="name">strategy.indicator.tree</field>
+        <field name="model">strategy.indicator</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='strategy_id'/>
+                <field name='first_level_id'/>
+                <field name='second_level_id'/>
+                <field name='third_level_id'/>
+                <field name='fourth_level_id'/>
+                <field name='category_id'/>
+                <field name='uom_id'/>
+                <field name='date'/>
+                <field name='target_value'/>
+                <field name='real_value'/>
+
+            </tree>
+        </field>
+    </record>
+
+</odoo>
