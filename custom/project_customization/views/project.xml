@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="edit_project" model="ir.ui.view">
+            <field name="name">project.project.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name='department_id' widget="many2one_tags"/>
+                    <field name="calculated_achievement" widget="percentage"/>
+                </xpath>
+                <xpath expr="//page[@name='settings']" position="after">
+                    <page name="other_infos" string="Infos Supplémentaires">
+                        <group>
+                            <group>
+                                <field name="currency_id"/>
+                                <field name="budget"/>
+                                <field name='sponsor_ids' widget="many2many_tags"/>
+                                <field name='market_type_ids' widget="many2many_tags"/>
+                                <field name="prerequisite"/>
+                                <field name="impacts"/>
+                            </group>
+                            <group>
+                                <field name='handling_type' widget="radio"/>
+                                <field name='funding_mode_ids' widget="many2many_tags"/>
+                                <field name='handling_mode_ids' widget="many2many_tags"/>
+                                <field name="impacts"/>
+                                <field name="remarks"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='other_infos']" position="after">
+                    <page name="strategic_alignment" string="Alignement stratégique">
+                        <group>
+                            <field name='alignment_ids'/>
+                            <group>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_project" model="ir.ui.view">
+            <field name="name">project.project.tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name='department_id' widget="many2one_tags"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="budget"/>
+                    <field name="calculated_achievement" widget="percentage"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

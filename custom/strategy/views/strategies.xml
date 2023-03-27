@@ -6,7 +6,7 @@
         <field name="name">Stratégies</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">strategy.strategy</field>
-        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_mode">tree,form</field>
     </record>
     <menuitem id="menu_strategy_strategies"
               name="Stratégies"
@@ -72,6 +72,4 @@
             </tree>
         </field>
     </record>
-
-
 </odoo>

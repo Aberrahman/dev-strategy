@@ -26,9 +26,9 @@
                         <group>
                             <field name='level_id'/>
                             <field name='strategy_id'/>
-                            <field name='first_level_id'/>
-                            <field name='second_level_id'/>
-                            <field name='third_level_id'/>
+                            <field name='first_level_id' domain="[('strategy_id', '=', strategy_id)]"/>
+                            <field name='second_level_id' domain="[('first_level_id', '=', first_level_id)]"/>
+                            <field name='third_level_id' domain="[('second_level_id', '=', second_level_id)]"/>
                             <field name='managers' widget="many2many_tags"/>
                             <field name='tag_ids' widget="many2many_tags"/>
                         </group>

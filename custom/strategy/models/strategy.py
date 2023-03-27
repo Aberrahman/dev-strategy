@@ -10,7 +10,7 @@ class Strategy(models.Model):
     name = fields.Char(required=True, string='Stratégie')
     cost = fields.Monetary(currency_field='currency_id', string='Coût')
     manager_ids = fields.Many2many('hr.employee', string='Responsables')
-    currency_id = fields.Many2one('res.currency', string='Devise')
+    currency_id = fields.Many2one('res.currency', string='Devise', default=lambda self: self.env.user.company_id.currency_id)
     start_date = fields.Date(string='Date début')
     end_date = fields.Date(string='Date fin')
     description = fields.Html(string='Description')

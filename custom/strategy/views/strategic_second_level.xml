@@ -27,7 +27,7 @@
                         <group>
                             <field name='level_id'/>
                             <field name='strategy_id'/>
-                            <field name='first_level_id'/>
+                            <field name='first_level_id' domain="[('strategy_id', '=', strategy_id)]"/>
                             <field name='managers' widget="many2many_tags"/>
                             <field name='tag_ids' widget="many2many_tags"/>
                         </group>

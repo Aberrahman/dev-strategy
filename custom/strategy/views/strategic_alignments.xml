@@ -24,13 +24,12 @@
                     <group>
                         <group>
                             <field name='strategy_id'/>
-                            <field name='first_level_id'/>
-                            <field name='second_level_id'/>
-
+                            <field name='first_level_id' domain="[('strategy_id', '=', strategy_id)]"/>
+                            <field name='second_level_id' domain="[('first_level_id', '=', first_level_id)]"/>
                         </group>
                         <group>
-                            <field name='third_level_id'/>
-                            <field name='fourth_level_id'/>
+                            <field name='third_level_id' domain="[('second_level_id', '=', second_level_id)]"/>
+                            <field name='fourth_level_id' domain="[('third_level_id', '=', third_level_id)]"/>
                             <field name='project_ids' widget="many2many_tags"/>
 
                         </group>

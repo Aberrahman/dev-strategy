@@ -6,7 +6,7 @@ class StrategyAlignment(models.Model):
     _description = 'Alignement stratégique'
 
     reference = fields.Char(string='Reference', default='New', readonly=True, required=True)
-    name = fields.Char(required=True, string='Alignement')
+    name = fields.Char(string='Alignement')
     strategy_id = fields.Many2one('strategy.strategy', string='stratégie')
     first_level_id = fields.Many2one('strategy.firstlevel', string='1er Niveau stratégique')
     second_level_id = fields.Many2one('strategy.secondlevel', string='2ème Niveau stratégique')
